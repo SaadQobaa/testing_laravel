@@ -10,21 +10,9 @@ use Validator,Session,Auth;
 
 class LoginController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    /*public function __construct()
-    {
-        $this->middleware('auth');
-    }*/
+    
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return Response
-     */
+
     public function display_login()
     {
         return view('auth.login');
@@ -63,19 +51,27 @@ class LoginController extends Controller
 
             if (Auth::attempt(['email' => $email, 'password' => $password])) {
 
-                //fake auth, do not work yet
+                
                  Session::flash('messages',["Successfully logged with email $email."]);
 
                  return view('front.index');
             }
             else{
-                //fake auth, do not work yet
+                
                  Session::flash('errors',["Oh snap ... the authentification is not successfull."]);
 
                  return view('auth.login');
             }
-
-           
         }  
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+
+        Session::flash('messages',["Successfully logged out."]);
+
+        return view('front.index');
     }
 }

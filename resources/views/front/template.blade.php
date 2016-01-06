@@ -52,102 +52,18 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-       
 
-    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                 <a class="navbar-brand" href="/"><img src="{!! asset('img/logo.png') !!}" alt="Basica"></a> 
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                	 <li {!! classActivePath('/') !!}>                  
-                        {!! link_to('/',trans('Home')) !!}                                          
-                </li>
-	
-	
-                    <li><a href="about-us.html">About Us</a></li>
-
-
-                    
-                    <li {!! Request::is('qbd/services') ? 'class="active"' : '' !!}>
-                        {!! link_to('qbd/services', trans('Quality by Design services')) !!}
-
-                    </li>
-                  
-                    
-                   
-                    
-                    <li {!! Request::is('auth/login') ? 'class="active"' : '' !!}>
-                        {!! link_to('/login', trans('Login')) !!}
-
-                    </li>
-
-                    @if(1>0)
-                    <li {!! Request::is('contact/create') ? 'class="active"' : '' !!}>
-                        {!! link_to('contact/create', trans('Contact us')) !!}
-
-                    </li>
-                    @endif                
-                </ul>
-            </div>
-        </div>
-        @yield('header')  
-    </header><!--/header-->
-
+    @include('navbar.navbar')
 
 <div class="page-header">
-<main role="panel" class="no-margin">
-        @if(session()->has('ok'))
-            @include('partials/error', ['type' => 'success', 'message' => session('ok')])
-        @endif  
-        @if(isset($info))
-            @include('partials/error', ['type' => 'info', 'message' => $info])
-        @endif
-        @yield('panel')
-</main>
-</div>
-
-    <main role="main" class="container">
-        
-        @if(session()->has('ok'))
-        
-            @include('partials/error', ['type' => 'success', 'message' => session('ok')])
-        @endif  
-        @if(isset($info))
-            @include('partials/error', ['type' => 'info', 'message' => $info])
-        @endif
+    <main role="panel" class="no-margin">
         @yield('main')
     </main>
-
-<?php 
-// Test area 
-
- //echo "coucou";
-  
-
-?> 
-  
-
-     <!-- Footer -->
-        <div class="footer">
-            @yield('footer')
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="footer-copyright">&copy; 2016 <a href="http://www.http://cybernano.eu/aboutus">Cybernano</a> Bootstrap HTML Template. By <a href="http://www.vactualart.com">Vactual Art</a>.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+</div>
 
 
+
+@include('footer.footer')
 
 </body>
 </html>
