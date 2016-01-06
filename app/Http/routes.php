@@ -29,6 +29,8 @@
 |
 */
 
+
+/*
 Route::group(['middleware' => ['web']], function () {
     //Index route 
 Route::get('/',function(){
@@ -63,3 +65,10 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 });
+*/
+
+Route::get('/','HomeController@index');
+
+Route::get('/login','LoginController@display_login');
+
+Route::post('/login','LoginController@check_login');

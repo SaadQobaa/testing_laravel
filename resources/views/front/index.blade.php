@@ -1,7 +1,20 @@
 @extends('front.template')
 
 @section('panel') 
-
+    @if(Session::has('errors'))
+                @for($i=0;$i< count( Session::get('errors') ); $i++)
+                    <div class="alert alert-danger">
+                        {{Session::get('errors')[$i]}}
+                    </div>
+                @endfor
+            @endif
+            @if(Session::has('messages'))
+                @for($i=0;$i< count( Session::get('messages') ); $i++)
+                    <div class="alert alert-success">
+                        {{Session::get('messages')[$i]}}
+                    </div>
+                @endfor
+            @endif
 	<section id="main-slider" class="no-margin">
         <div class="carousel slide">
             <ol class="carousel-indicators">
