@@ -6,7 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-use Validator,Session,Auth;
+use Validator,Session,Auth,Redirect;
 
 class LoginController extends Controller
 {
@@ -72,6 +72,6 @@ class LoginController extends Controller
 
         Session::flash('messages',["Successfully logged out."]);
 
-        return view('front.index');
+        return  view('front.index');
     }
 }

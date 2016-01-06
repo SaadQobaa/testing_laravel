@@ -43,8 +43,10 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('/register', 'Auth\AuthController@getRegister');
+Route::post('/register', 'Auth\AuthController@postRegister');
+
+
 
 // Controleur authentification 
 Route::controllers([
@@ -72,9 +74,12 @@ Route::group(['middleware' => 'web'], function () {
 Route::get('/','HomeController@index');
 
 Route::get('/login','LoginController@display_login');
-
 Route::post('/login','LoginController@check_login');
+
+Route::get('/register', 'RegisterController@display');
+Route::post('/register', 'RegisterController@register');
+
 
 Route::group(['middleware' => ['auth']], function () {
 	Route::get('/logout','LoginController@logout');
-}
+});

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -24,8 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('front.index');
+        if(Auth::check()){
+              return view('front.qbd');
+        }
+        else{
+              return view('front.index');
+        }
+      
 
     }
 }
