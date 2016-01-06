@@ -1,6 +1,6 @@
-@extends('front.template')
+@extends('template')
 
-@section('panel') 
+@section('main') 
     @if(Session::has('errors'))
                 @for($i=0;$i< count( Session::get('errors') ); $i++)
                     <div class="alert alert-danger">
