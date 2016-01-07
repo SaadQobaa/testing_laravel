@@ -42,13 +42,14 @@ class UserController extends Controller
 
   public function store(){
 	$user = new User;
-
-
+	//$remember = (Input::has('remember')) ? true : false;
+	
 	$user -> first_name = Input::get('name');
 	$user -> last_name = Input::get('username');
 	$user -> email  = Input::get('email');
 	$user -> password = Hash::make(Input::get('password'));
-  //name , username , email , password, 
+	$user -> remember_token = 'blabla'; 
+//name , username , email , password, 
 
 	$user -> save();
 	return Redirect::to('/user');
@@ -63,6 +64,7 @@ class UserController extends Controller
 	$user -> last_name = Input::get('username');
 	$user -> email  = Input::get('email');
 	$user -> password = Hash::make(Input::get('password'));
+	$user -> remember_token = Hash::make(str_random(40)); 
   //name , username , email , password, 
 
 	$user -> save();

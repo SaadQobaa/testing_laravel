@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -11,6 +11,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+ //$session:: new Session(); 
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -23,4 +24,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+
+public function getRememberToken()
+{
+    return $this-> $hidden['remember_token'];
+}
+
+public function setRememberToken($value)
+{
+    $this->$hidden['remember_token'] = $value;
+}
+
+public function getRememberTokenName()
+{
+    return $hidden['remember_token'];
+}
+
+
+
+
 }

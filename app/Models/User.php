@@ -16,6 +16,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
          *
          * @var string
          */
+	 
         protected $table = 'users';
 
         protected $fillable = array('username', 'email', 'password');
@@ -25,7 +26,36 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
          * @var array
          */
       
+	/**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
+
+
+
+
+
+
+
+public function getRememberToken()
+{
+    return $this-> $hidden['remember_token'];
+}
+
+public function setRememberToken($value)
+{
+    $this->$hidden['remember_token'] = $value;
+}
+
+public function getRememberTokenName()
+{
+    return $hidden['remember_token'];
+}
 
 
 

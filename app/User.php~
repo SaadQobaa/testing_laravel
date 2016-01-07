@@ -1,0 +1,48 @@
+<?php
+
+namespace App;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+ $session:: new Session(); 
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+
+
+public function getRememberToken()
+{
+    return $this-> $hidden['remember_token'];
+}
+
+public function setRememberToken($value)
+{
+    $this->$hidden['remember_token'] = $value;
+}
+
+public function getRememberTokenName()
+{
+    return $hidden['remember_token'];
+}
+
+
+
+
+}

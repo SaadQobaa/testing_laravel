@@ -1,17 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-
-use Validator,Session,Auth,Redirect;
-
+//use Validator,Session,Auth,Redirect;
+use Validator,Auth,Redirect;
 class LoginController extends Controller
 {
     
-
+//protected $remember = (Auth::viaRemember()) ? true : false;
 
     public function display_login()
     {
@@ -34,7 +33,7 @@ class LoginController extends Controller
         ];
 
         $validator = Validator::make(Input::all(),$rules,$custom_msg);
-
+	
         if($validator->fails()){
 
             Session::flash('errors',$validator->messages()->all() );
@@ -45,16 +44,15 @@ class LoginController extends Controller
 
             $password = Input::get('password');
             $email = Input::get('email');
-
+	    //$remember = (Auth::viaRemember()) ? true : false;
             
-            
-
-            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+	
+            if (Auth::attempt(['email' => $email, 'password' => $password]) ) {
 
                 
                  Session::flash('messages',["Successfully logged with email $email."]);
-
-                 return view('front.index');
+		 //Session::save() ;
+                 return view('front.qbd');
             }
             else{
                 
