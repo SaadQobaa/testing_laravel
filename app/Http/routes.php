@@ -76,10 +76,16 @@ Route::get('/','HomeController@index');
 Route::get('/login','LoginController@display_login');
 Route::post('/login','LoginController@check_login');
 
+Route::get('/qtpp','InitiationController@display_initiation');
+Route::post('/qtpp','InitiationController@insert_qtpp');
+
 Route::get('/register', 'RegisterController@display');
 Route::post('/register', 'RegisterController@register');
 
-
+/*Route::group(['middleware'=>['initiation']],function(){ 
+	Route::get('/qtpp','InitiationController@display_initiation');
+});
+*/
 Route::group(['middleware' => ['auth']], function () {
 	Route::get('/logout','LoginController@logout');
 });

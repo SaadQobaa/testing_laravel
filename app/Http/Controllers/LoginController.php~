@@ -52,7 +52,7 @@ class LoginController extends Controller
                 
                  Session::flash('messages',["Successfully logged with email $email."]);
 		 //Session::save() ;
-                 return view('front.index');
+                 return view('front.qbd');
             }
             else{
                 
