@@ -10,7 +10,7 @@
 	"twitter/bootstrap": "*",
 	"laravelcollective/html": "5.2.*",
 	"illuminate/html": "5.*",
-	"predis/predis" : "0.8.*",
+	"predis/predis" : "0.8.*"
 	
 
 	

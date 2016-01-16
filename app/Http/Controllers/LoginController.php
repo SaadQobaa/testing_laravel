@@ -14,12 +14,21 @@ class LoginController extends Controller
 
     public function display_login()
     {
+        if(Auth::viaRemember()){
+
+            return view('front.qbd');
+        } else {
+
         return view('auth.login');
+    }
+
     }
 
      public function check_login()
     {
        
+       $throttles = in_array(ThrottlesLogin::class,class_uses_recursive(get_class($this)));
+
 
         $rules = [ 'password'=>'required|max:64',
                     'email'=>'required|max:320|email'
@@ -44,23 +53,30 @@ class LoginController extends Controller
 
             $password = Input::get('password');
             $email = Input::get('email');
-	    //$remember = (Auth::viaRemember()) ? true : false;
+	       //$remember = (Auth::viaRemember()) ? true : false;
             
 	
-            if (Auth::attempt(['email' => $email, 'password' => $password]) ) {
-
+            if (Auth::attempt(['email' => $email, 'password' => $password])) { // || Auth::viaRemember()
+                  
+                 
+                 Auth::login(Auth::user(),true);
                 
                  Session::flash('messages',["Successfully logged with email $email."]);
-		 //Session::save() ;
+		         Session::save() ;
+
+
                  return view('front.qbd');
             }
             else{
                 
-                 Session::flash('errors',["Oh snap ... the authentification is not successfull."]);
+                 Session::flash('errors',["Authentification failed. Please check your credentials"]);
 
                  return view('auth.login');
             }
-        }  
+
+        
+    }
+
     }
 
     public function logout()

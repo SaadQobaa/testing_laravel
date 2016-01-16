@@ -28,10 +28,12 @@
                   
                     
                    
-                    @if(Auth::check())
-                     <li {!! Request::is('logout') ? 'class="active"' : '' !!}>
+                    @if(Auth::user())
+                       
+                     <li {!! Request::is('logout') ? 'class="active"' : '' !!}>  
                         {!! link_to('/logout', trans('Logout')) !!}
                     </li>
+                
                     @else
                     <li {!! Request::is('login') ? 'class="active"' : '' !!}>
                         {!! link_to('/login', trans('Login')) !!}

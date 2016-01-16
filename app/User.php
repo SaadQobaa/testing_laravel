@@ -11,6 +11,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //protected $hidden =['password','remember_token'] ; 
  //$session:: new Session(); 
     protected $fillable = [
         'name', 'email', 'password',
@@ -26,7 +27,7 @@ class User extends Authenticatable
     ];
 
 
-
+/*
 public function getRememberToken()
 {
     return $this-> $hidden['remember_token'];
@@ -41,7 +42,7 @@ public function getRememberTokenName()
 {
     return $hidden['remember_token'];
 }
-
+*/
 
 
 

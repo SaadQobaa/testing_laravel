@@ -2,24 +2,11 @@
   General Style
 --------------------------------------------------------------------------*/
 body {
-  position: relative;
-  padding-top:50px;
+ 
   background: #FFFFFF;
   min-height: 100%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding-bottom: 5em;
-
-}
-
-.header{
-position: relative;
-left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  border: 1px;
-  background: #888
 }
 
 .section {
@@ -29,9 +16,13 @@ left: 0;
   -o-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
+  min-height:100%;
+  position: relative;
+  
 }
 .section-white {
   background: #FFF;
+  margin-bottom: 100px;
 }
 .section-dark {
   background: #151515;
@@ -131,6 +122,11 @@ a:hover {
   text-decoration:none;
   outline: 0;
 }
+i:hover {
+  color: #dcff21;
+  text-decoration:none;
+  outline: 0;
+}
 /*--------------------------------------------------------------------------
 + Services Style
 --------------------------------------------------------------------------*/
@@ -148,7 +144,7 @@ a:hover {
   margin-top: 0;
 }
 .service-wrapper i {
-  font-size:54px;
+  font-size:40px;
 }
 /* Row */
 .service-wrapper-row {
@@ -364,7 +360,7 @@ a:hover {
     background-clip: padding-box;
   }
   .pricing-plan-promote {
-    background: #aec62c;
+    background: #ccd51f;
     padding: 40px;
     margin-top: 0;
     -webkit-border-radius: 7px;
@@ -1036,15 +1032,15 @@ border:none;
 + Breadcrumbs Section Style
 --------------------------------------------------------------------------*/
 .section-breadcrumbs {
-  background: #aec62c;
-  margin-bottom: 10px;
-  margin-top:90px;
+  background: #ccd51f;
+  margin-bottom: 50px;
+  padding-top: 90px;
 }
 .section-breadcrumbs h1 {
   color: #FFF;
   font-size: 28px;
   text-transform: uppercase;
-  margin-bottom: 0;
+  margin-bottom: -5px;
 }
 @media(max-width:767px) {
 .section-breadcrumbs {
@@ -1055,7 +1051,7 @@ border:none;
   Footer Style
 --------------------------------------------------------------------------*/
 .footer {
-  position:absolute;
+ /* position:absolute; */ /* permet de fixer la position du footer en bas da bas quand il n'y a pas beaucoup de contenu */
   bottom:0;
   left:0;
   right:0;
@@ -1063,7 +1059,7 @@ border:none;
   background: #222;
   color: #A0A0A0;
   padding: 0 20px 10px 20px;
-  border-top: 4px solid #aec62c;
+  border-top: 4px solid #ccd51f;
   margin-top: 20px;
   -webkit-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
   -moz-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
@@ -1191,7 +1187,7 @@ border:none;
 + Buttons Style
 --------------------------------------------------------------------------*/
 .btn {
-  border: 1px solid #aec62c;
+  border: 1px solid #ccd51f;
   -webkit-border-radius: 2px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 2px;
@@ -1207,11 +1203,14 @@ border:none;
   -ms-transition: all .25s ease;
   transition: all .25s ease;
   text-align: center;
-  background: none repeat scroll 0 0 #aec62c;
+  background: none repeat scroll 0 0 #ccd51f;
   text-shadow: none;
   box-shadow: none;
-  color: #FFF;
+  color: #FFFFFF;
   white-space: nowrap;
+  margin: auto;
+  height: 40px;
+  width: 200px;
 }
 .btn:hover {
   background: none repeat scroll 0 0 #3b3c41;
@@ -1231,9 +1230,9 @@ outline: 0;
   font-size: 10px;
 }
 .btn-grey {
-  border: 1px solid #cecece;
-  color: #333;
-  background: none repeat scroll 0 0 #E7E7E7;
+  border: 1px solid #3b3c41;
+  color: #FFFFFF;
+  background: none repeat scroll 0 0 #3b3c41; 
 }
 .btn-grey:hover {
   background: none repeat scroll 0 0 #cecece;
@@ -1245,11 +1244,22 @@ outline: 0;
   border-top: 4px solid #333;
 }
 .btn-blue {
-  border: 1px solid #3e7191;
+  border: 1px solid #076379;
   color: #FFF;
-  background: none repeat scroll 0 0 #4F8DB3;
+  background: none repeat scroll 0 0 #076379;
 }
 .btn-blue:hover {
+  background: none repeat scroll 0 0 #3b3c41;
+  color: #FFF;
+  text-decoration: none;
+  border: 1px solid #3b3c41;
+}
+.btn-violet {
+  border: 1px solid #25013A;
+  color: #FFF;
+  background: none repeat scroll 0 0 #25013A;
+}
+.btn-violet:hover {
   background: none repeat scroll 0 0 #3b3c41;
   color: #FFF;
   text-decoration: none;
@@ -1288,10 +1298,83 @@ outline: 0;
   text-decoration: none;
   border: 1px solid #3b3c41;
 }
+
 .btn-group.open .btn.dropdown-toggle {
+  background: #ccd51f;
   background: none repeat scroll 0 0 #3b3c41;
   color: #FFF;
 }
+
+.btn-glyphicon {
+  background: none repeat scroll 0 0 #ccd51f;
+border: 1px solid #ccd51f;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  margin: auto;
+  font-size:25px;
+  padding-bottom: 10px;
+}
+
+.btn-glyphicon-remove {
+  background: none repeat scroll 0 0 #ccd51f;
+border: 1px solid #ccd51f;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  margin: auto;
+  font-size:15px;
+}
+
+.btn-glyphicon-grey{
+  background: none repeat scroll 0 0 #3b3c41;
+border: 1px solid #3b3c41;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  margin: auto;
+  font-size:25px;
+  padding-bottom: 10px;
+
+}
+
+.btn-glyphicon-violet {
+  background: none repeat scroll 0 0 #25013A;
+border: 1px solid #25013A;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  margin: auto;
+  font-size:25px;
+  padding-bottom: 10px;
+}
+
+.btn-glyphicon-blue {
+  background: none repeat scroll 0 0 #076379;
+border: 1px solid #076379;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  margin: auto;
+  font-size:25px;
+  padding-bottom: 10px;
+}
+
 .dropdown.open a.dropdown-toggle .caret {
   border-top: 4px solid #FFF;
 }
@@ -1322,7 +1405,7 @@ outline: 0;
   color: white;
   /*need more margin on the left of links to accomodate the numbers*/
   padding: 0 10px 0 60px;
-  background: #666;
+  background: #076379;
   position: relative;
 }
 /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
@@ -1364,7 +1447,7 @@ outline: 0;
   /*we need to prevent the arrows from getting buried under the next link*/
   z-index: 1;
   /*background same as links but the gradient will be rotated to compensate with the transform applied*/
-  background: #666;
+  background: #076379;
   
   /*stylish arrow design using box shadow*/
   box-shadow: 
@@ -1398,6 +1481,42 @@ outline: 0;
 }
 
 
-
-
+#fade { /*--Masque opaque noir de fond--*/
+  display: none; /*--masqué par défaut--*/
+  background: #000;
+  position: fixed; left: 0; top: 0;
+  width: 100%; height: 100%;
+  opacity: .80;
+  z-index: 9999;
+}
+.popup_block{
+  display: none; /*--masqué par défaut--*/
+  background: #fff;
+  padding: 20px;
+  border: 20px solid #ddd;
+  float: left;
+  font-size: 1.2em;
+  position: fixed;
+  top: 50%; left: 50%;
+  z-index: 99999;
+  /*--Les différentes définitions de Box Shadow en CSS3--*/
+  -webkit-box-shadow: 0px 0px 20px #000;
+  -moz-box-shadow: 0px 0px 20px #000;
+  box-shadow: 0px 0px 20px #000;
+  /*--Coins arrondis en CSS3--*/
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+img.btn_close {
+  float: right;
+  margin: -55px -55px 0 0;
+}
+/*--Gérer la position fixed pour IE6--*/
+*html #fade {
+position: absolute;
+}
+*html .popup_block {
+position: absolute;
+}
 
